@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agtwo-coll-550473fa392d439e92dfcf4f24e7f650-depl
+  labels:
+    app: agtwo-coll-550473fa392d439e92dfcf4f24e7f650
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: agtwo-coll-550473fa392d439e92dfcf4f24e7f650
+  template:
+    metadata:
+      labels:
+        app: agtwo-coll-550473fa392d439e92dfcf4f24e7f650
+    spec:
+      containers:
+        - name: agtwo-coll-550473fa392d439e92dfcf4f24e7f650
+          image: 216084506783.dkr.ecr.ap-south-1.amazonaws.com/backstract_apps:agtwo-coll-550473fa392d439e92dfcf4f24e7f650
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9030
